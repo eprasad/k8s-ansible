@@ -6,18 +6,18 @@
       k8s:
         state: present
         definition:
-        apiVersion: v1
-        kind: Service
-      metadata:
-        name: web
-        namespace: testing
-        labels:
-          app: galaxy
-          service: web
-      spec:
-        selector:
-          app: galaxy
-          service: web
+          apiVersion: v1
+          kind: Service
+          metadata:
+            name: web
+            namespace: testing
+            labels:
+              app: galaxy
+              service: web
+        spec:
+          selector:
+            app: galaxy
+            service: web
         ports:
         - protocol: TCP
           targetPort: 8000

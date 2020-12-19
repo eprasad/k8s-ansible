@@ -4,8 +4,12 @@
   tasks:
     - name: Get an existing Service object
       k8s_facts:
-         api_version: v1
-         kind: Service
-         name: web
-         namespace: testing
-     register: web_service
+        api_version: v1
+        kind: Service
+        name: web
+        namespace: testing
+      register: web_service
+
+    - name: Print object information
+      debug:
+        var: web_service

@@ -1,0 +1,8 @@
+---
+- name: Install ArgoCD Operator and cluster tools
+  hosts: k8s_cluster1
+  tasks:
+    - import_role:
+        name: darthlukan.argocd_install.install_prereqs
+    - import_role:
+        name: darthlukan.argocd_install.install_argocd
